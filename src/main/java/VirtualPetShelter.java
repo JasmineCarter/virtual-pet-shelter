@@ -23,5 +23,16 @@ public class VirtualPetShelter {
 		pets.remove(pet1.getName()); 
 	}
 
+	public void feedAll() {
+		for (VirtualPet pet: pets.values()) {
+			pet.feed();
+		}
+	}
+
+	public void play(String name) {
+		pets.get(name).activity();
+	}
+
+
 	
 }

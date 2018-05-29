@@ -6,15 +6,14 @@ public class VirtualPet {
 	private int hunger;
 	private int thirst;
 	private int water;
-	private int activity;
 	private int boredom;
 
-	public VirtualPet(String petName, int hunger, int thirst, int activity, boolean getsBath , boolean getsTreat, String petDescription, int boredom) {
+	public VirtualPet(String petName, int hunger, int thirst, int boredom, String petDescription) {
 		this.petName = petName;
 		this.petDescription = petDescription;
 		this.hunger = hunger;
 		this.thirst = thirst;
-		this.activity = activity;
+		this.boredom = boredom; 
 	}
 
 	public String getName() {
@@ -25,28 +24,31 @@ public class VirtualPet {
 		return petDescription;
 	}
 
-	public void feed(int feed) {
-		hunger -= feed; 
+	public void feed() {
+		hunger -= 10; 
 	}
 
 	public int getHunger() {
 		return hunger;
 	}
 
-	public void thirst(int thirst) {
-		thirst -= water;
+	public void water() {
+		thirst -= 15;
 	}
 
 	public int getThirst() {
 		return thirst;
 	}
 
-	public void activity(int activity) {
-		boredom -= activity;
+	public void activity() {
+		boredom -= 20;
 	}
 
-	public int getActivity() {
-		return activity;
+	public int getBoredom() {
+		
+		return boredom;
 	}
+
+
 
 }

@@ -18,8 +18,8 @@ public class VirtualPetShelterTest {
 	@Before
 	public void setUp() {
 		underTest = new VirtualPetShelter();
-		pet1 = new VirtualPet("Penny", 50, 0, 0, false, false, "Loves to cuddle!", 0);
-		pet2 = new VirtualPet("Charlie",50,0,0,false, false, "Loves to run!", 0);
+		pet1 = new VirtualPet("Penny", 50, 50, 50,"Loves to cuddle!");
+		pet2 = new VirtualPet("Charlie",50, 50, 50,"Loves to run!");
 	}
 
 	@Test
@@ -49,45 +49,19 @@ public class VirtualPetShelterTest {
 	}
 	
 	@Test 
-	public void shouldReturnPetNamePenny() {
-		VirtualPet underTest = new VirtualPet("Penny", 0,0,0,false,false,"",0); 
-		String check = underTest.getName(); 
-		assertEquals(check, "Penny"); 
-	}
-	
-	@Test 
-	public void shouldReturnLovesToRun() {
-		VirtualPet underTest = new VirtualPet("",0,0,0,false,false,"Loves to run!",0); 
-		String check = underTest.getDescription(); 
-		assertEquals(check, "Loves to run!"); 
+	public void shouldHaveFeedOf40WhenFeedingAllPets() {
+		underTest.add(pet1);
+		underTest.add(pet2);
+		underTest.feedAll(); 
+		assertThat(pet1.getHunger(), is(40)); 
+		assertThat(pet2.getHunger(), is(40));
 	}
 	
 	@Test
-	public void shouldReturnHungerof0AfterFeeding50() {
-		VirtualPet underTest = new VirtualPet("", 0,0,0,false,false,"",0); 
-		underTest.feed(50); 
-		int check = underTest.getHunger(); 
-		assertEquals(50, check); 
-	}
-	
-	@Test
-	public void shouldReturnThirstof25AfterWatering25() {
-		VirtualPet underTest = new VirtualPet("",0,0,0,false,false,"",0); 
-		underTest.thirst(25); 
-		int check = underTest.getThirst(); 
-		assertEquals(25, check); 
-	}
-	
-	@Test
-	public void shouldHaveBoredomOf0AfterPlay100() {
-		VirtualPet underTest = new VirtualPet("",0,0,0,false,false,"",0); 
-		underTest.activity(100); 
-		int check = underTest.getActivity(); 
-		assertEquals(100, check); 
-		
-	}
-	
-	
+	public void shouldBeAbleToFindAPet() {
+		underTest.add(pet1);
+		underTest.play(pet1.getName()); 
+		assertThat(pet1.getBoredom(), is(30));
+}
 	
 }
-
