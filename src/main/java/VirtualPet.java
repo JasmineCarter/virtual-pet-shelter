@@ -13,7 +13,7 @@ public class VirtualPet {
 		this.petDescription = petDescription;
 		this.hunger = hunger;
 		this.thirst = thirst;
-		this.boredom = boredom; 
+		this.boredom = boredom;
 	}
 
 	public String getName() {
@@ -25,7 +25,7 @@ public class VirtualPet {
 	}
 
 	public void feed() {
-		hunger -= 10; 
+		hunger -= 10;
 	}
 
 	public int getHunger() {
@@ -45,10 +45,12 @@ public class VirtualPet {
 	}
 
 	public int getBoredom() {
-		
+
 		return boredom;
 	}
 
-
+	public void tick() {
+		hunger += 5;
+	}
 
 }
