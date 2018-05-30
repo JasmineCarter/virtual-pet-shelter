@@ -33,6 +33,13 @@ public class VirtualPetShelter {
 		pets.get(name).activity();
 	}
 
+	public void waterAll() {
+		for (VirtualPet pet: pets.values()) {
+			pet.water(); 
+		}
+		
+	}
+
 
 	
 }

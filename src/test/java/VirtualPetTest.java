@@ -28,11 +28,11 @@ public class VirtualPetTest {
 	}
 	
 	@Test
-	public void shouldReturnThirstof0AfterWatering25() {
-		VirtualPet underTest = new VirtualPet("",0,25,0, ""); 
+	public void shouldReturnThirstof0AfterWatering35() {
+		VirtualPet underTest = new VirtualPet("",0,50,0, ""); 
 		underTest.water(); 
 		int check = underTest.getThirst(); 
-		assertEquals(10, check); 
+		assertEquals(35, check); 
 	}
 	
 	@Test

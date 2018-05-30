@@ -56,7 +56,15 @@ public class VirtualPetShelterTest {
 		assertThat(pet1.getHunger(), is(40)); 
 		assertThat(pet2.getHunger(), is(40));
 	}
-	
+	@Test 
+	public void shouldHaveThirstOf20WhenWateringAllPets() {
+		underTest.add(pet1);
+		underTest.add(pet2);
+		underTest.waterAll(); 
+		assertThat(pet1.getThirst(), is(35)); 
+		assertThat(pet2.getThirst(), is(35));
+		
+	}
 	@Test
 	public void shouldBeAbleToFindAPet() {
 		underTest.add(pet1);
